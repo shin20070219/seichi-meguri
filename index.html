@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seichi Meguri | Custom Anime Trips & Pilgrimage Routes in Japan</title>
+<meta name="description" content="Custom anime trips and pilgrimage route planning in Japan. Personalized travel plans for Your Name, Jujutsu Kaisen, Weathering With You, Slam Dunk, and more.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:#1d2b5b;background:#f7f8fc}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+.logo strong{font-size:22px}.logo div{font-size:12px;color:#667}
+.desktop-nav{display:flex;gap:26px;align-items:center}.desktop-nav a{text-decoration:none;color:#1d2b5b;font-weight:600}.desktop-nav .nav-apply{background:#ff4f86;color:#fff;padding:12px 20px;border-radius:24px}
+.hamburger{display:none;width:42px;height:42px;border:none;background:#fff;border-radius:12px;cursor:pointer;flex-direction:column;justify-content:center;gap:6px;padding:9px;box-shadow:0 4px 16px rgba(0,0,0,.08)}.hamburger span{display:block;height:3px;background:#1d2b5b;border-radius:5px}
+.menu{position:fixed;top:0;right:-320px;width:300px;height:100vh;background:#fff;z-index:20;box-shadow:-10px 0 30px rgba(0,0,0,.12);transition:.3s;padding:30px 22px 80px;display:flex;flex-direction:column}.menu.open{right:0}.menu-close{align-self:flex-end;border:none;background:none;font-size:28px;cursor:pointer;color:#1d2b5b}.menu a{display:block;text-decoration:none;color:#1d2b5b;font-size:18px;padding:18px 12px;border-bottom:1px solid #eef1f8}.menu a.form-link{margin-top:auto;margin-bottom:40px;background:#ff4f86;color:#fff;border-radius:16px;text-align:center;border:none;font-weight:bold}.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:15}.overlay.show{display:block}
+.btn{display:inline-block;background:#ff4f86;color:#fff;padding:14px 24px;border-radius:28px;text-decoration:none;font-weight:bold;border:none;cursor:pointer}.floating-apply{position:fixed;right:26px;bottom:26px;z-index:12;background:#ff4f86;color:#fff;text-decoration:none;padding:16px 24px;border-radius:999px;font-weight:bold;box-shadow:0 10px 30px rgba(255,79,134,.35)}
+.hero{position:relative;display:block;min-height:520px;padding:90px 40px;overflow:hidden}.hero>div:first-child{position:relative;z-index:2;max-width:720px}.hero h1{font-size:58px;line-height:1.1;color:#fff}.hero h1 .pink{color:#ff4f86}.pink{color:#ff4f86}.hero p{margin:20px 0;font-size:22px;color:#fff}.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}.hero-tags span{font-size:13px;color:#1d2b5b;background:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:8px 12px;box-shadow:0 4px 14px rgba(0,0,0,.12)}.placeholder{position:absolute;inset:0;overflow:hidden;background:#e9edf7;border-radius:0;min-height:100%;box-shadow:none;z-index:1}.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}.hero-slide.active{opacity:1}.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,17,48,.72),rgba(4,17,48,.32),rgba(4,17,48,.08))}.slide-dots{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:8px;z-index:2}.slide-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.75);box-shadow:0 2px 8px rgba(0,0,0,.2)}.slide-dot.active{background:#ff4f86}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:0 40px 60px}.card{position:relative;overflow:hidden;background:#fff;border-radius:16px;padding:0;box-shadow:0 8px 24px rgba(0,0,0,.06)}.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,17,48,.08),rgba(4,17,48,.72));z-index:1;pointer-events:none}.card h3,.card p{position:absolute;left:16px;right:16px;z-index:2;color:#fff}.card h3{bottom:42px}.card p{bottom:18px;font-size:14px;color:rgba(255,255,255,.9)}.thumb{height:220px;border-radius:16px;background:#eef2fb;display:flex;align-items:center;justify-content:center;color:#8090b0;margin-bottom:0;overflow:hidden;position:relative}.thumb img{width:100%;height:100%;object-fit:cover;display:block}.card-slideshow{width:100%;height:100%;position:relative}.card-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease}.card-slide.active{opacity:1}
+.section{padding:70px 40px}.section h2{font-size:38px;margin-bottom:24px;text-align:center}.section-lead{text-align:center;max-width:760px;margin:0 auto 34px;color:#556;font-size:18px;line-height:1.7}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:auto}.info-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(0,0,0,.06)}.info-card h3{margin-bottom:10px}.info-card p{color:#556;line-height:1.6}.plan-card{position:relative}.plan-card .price{font-size:26px;font-weight:bold;color:#ff4f86;margin:14px 0}.plan-card ul{padding-left:20px;color:#556;line-height:1.9}.plan-actions{text-align:center;margin-top:34px}.plan-actions .btn{width:360px;max-width:100%;padding:18px 28px;font-size:18px;border-radius:22px}.pricing-examples{display:none;max-width:1100px;margin:50px auto 0}.pricing-examples.open{display:block}.pricing-examples .display-note{display:none}.pricing-examples.open .display-note{display:block}.pricing-examples h3,.sample-trips h3{font-size:30px;margin-bottom:24px;text-align:center}.pricing-carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 18px}.pricing-carousel::-webkit-scrollbar{height:8px}.pricing-carousel::-webkit-scrollbar-thumb{background:#ccd4e6;border-radius:999px}.pricing-card{flex:0 0 360px;background:#fff;border-radius:22px;padding:30px;scroll-snap-align:start;box-shadow:0 8px 24px rgba(0,0,0,.06)}.trip-entry{background:#e5f0ff}.trip-standard{background:#ffeaf2}.trip-premium{background:#fff0c8}.pricing-card h4{font-size:24px;margin-bottom:6px}.pricing-card .btn{margin-top:16px}.pricing-card .trip-title{font-size:20px;color:#556;margin-bottom:12px}.pricing-card .from-price{font-size:26px;font-weight:bold;color:#ff4f86;margin:12px 0}.pricing-card p{color:#556;line-height:1.7;margin-bottom:16px}.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.pricing-block{background:#f7f8fc;border-radius:16px;padding:18px}.pricing-block h5{font-size:17px;margin-bottom:10px}.pricing-block ul{padding-left:20px;color:#556;line-height:1.8}.display-note{background:#fff4f8;border-left:5px solid #ff4f86;border-radius:16px;padding:20px;color:#445;line-height:1.7;margin-top:22px}.close-examples{text-align:center;margin-top:24px}.sample-trips{max-width:1100px;margin:54px auto 0}.sample-carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 18px}.sample-carousel::-webkit-scrollbar{height:8px}.sample-carousel::-webkit-scrollbar-thumb{background:#ccd4e6;border-radius:999px}.sample-card{flex:0 0 280px;background:#fff;border-radius:20px;padding:22px;scroll-snap-align:start;box-shadow:0 8px 24px rgba(0,0,0,.06)}.sample-image{height:140px;border:2px dashed #cfd7ea;border-radius:14px;background:#eef2fb;display:flex;align-items:center;justify-content:center;color:#8090b0;text-align:center;margin-bottom:16px}.sample-card h4{font-size:20px;margin-bottom:14px}.recommended-plan{display:inline-block;background:#ff4f86;color:#fff;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:bold}.recommended{border:1px solid #f3d6e2}.plan-card{cursor:pointer;transition:.2s;border:1px solid #e8eaf2}.plan-entry{background:#e5f0ff;border-color:#dbe4f0}.plan-standard{background:#ffeaf2;border-color:#ffd3e2}.plan-premium{background:#fff0c8;border-color:#e0c37a}.plan-card.selected{border:2px solid #ff4f86 !important;transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,79,134,.18)}.plan-cta{text-align:center;margin-top:26px}.plan-cta .status{display:block;font-weight:bold;color:#1d2b5b;margin-bottom:12px}.badge{position:absolute;top:-14px;right:18px;background:#ff4f86;color:#fff;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:bold}
+.form-section{background:#f7f8fc}.formwrap{max-width:900px;margin:auto;background:#fff;padding:28px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.06)}form{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{font-size:14px;color:#556;display:block;margin-bottom:6px}.required{display:inline-block;margin-left:6px;color:#ff4f86;font-size:12px;font-weight:bold}input,select,textarea{width:100%;padding:12px;border:1px solid #ccd4e6;border-radius:10px;background:#fff}textarea{min-height:120px;grid-column:1/-1}.full{grid-column:1/-1}.submit{font-size:16px}
+.custom-date-wrap{position:relative}.custom-date-box{display:flex;align-items:center;width:100%;padding:10px 12px;border:1px solid #ccd4e6;border-radius:10px;background:#fff;gap:6px}.date-part{border:none;background:transparent;color:#1d2b5b;font-size:16px;padding:4px 2px;cursor:pointer}.date-part:hover{color:#ff4f86}.calendar-button{margin-left:auto;border:none;background:transparent;font-size:20px;cursor:pointer}.calendar-hidden{position:absolute;right:0;bottom:0;width:1px;height:1px;opacity:0;pointer-events:none}.date-dropdown{display:none;position:absolute;left:0;top:78px;background:#fff;border:1px solid #ccd4e6;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.12);padding:8px;z-index:8}.date-dropdown.open{display:block}.date-dropdown select{width:160px;border:none;outline:none}.date-note{font-size:13px;color:#778;margin-top:8px;line-height:1.5}.footer{padding:30px;text-align:center;color:#667;background:#fff}
+@media(max-width:900px){.sample-card{flex-basis:82vw}.pricing-card{flex-basis:82vw}.cards{display:flex;overflow-x:auto;gap:18px;scroll-snap-type:x mandatory;padding:0 20px 40px}.cards .card{flex:0 0 82vw;scroll-snap-align:start}.cards::-webkit-scrollbar{height:8px}.cards::-webkit-scrollbar-thumb{background:#ccd4e6;border-radius:999px}header{padding:16px 20px}.desktop-nav{display:none}.hamburger{display:flex}.hero{min-height:560px;padding:70px 20px}.hero h1{font-size:42px}.cards{padding:0 20px 40px}.section{padding:54px 20px}.section h2{font-size:32px}.info-grid{grid-template-columns:1fr}form{grid-template-columns:1fr}.floating-apply{right:18px;bottom:18px;padding:14px 20px}}
+
+
+
+/* Hero commercial overlay refinement */
+.hero{position:relative;display:flex;align-items:center;min-height:560px;padding:72px 40px;overflow:hidden}
+.hero>div:first-child{position:relative;z-index:2;max-width:560px}
+.hero h1{color:#fff}
+.hero p{color:rgba(255,255,255,.94);line-height:1.55}
+.hero .btn{box-shadow:0 14px 30px rgba(255,79,134,.32);transition:transform .25s ease,box-shadow .25s ease}
+.hero .btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(255,79,134,.42)}
+.hero-tags span{color:#1d2b5b;background:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.72);box-shadow:0 8px 22px rgba(0,0,0,.12);backdrop-filter:blur(8px)}
+.placeholder{position:absolute;inset:0;border-radius:0;min-height:100%;box-shadow:none;z-index:1}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.42),rgba(0,0,0,.08))}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;padding:32px 40px 70px;max-width:1240px;margin:0 auto}
+.card{position:relative;overflow:hidden;background:#fff;border:1px solid #eef1f8;border-radius:20px;padding:0;box-shadow:0 14px 34px rgba(20,35,70,.08);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-5px);box-shadow:0 22px 46px rgba(20,35,70,.12);border-color:#f5c8d8}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,17,48,.05),rgba(4,17,48,.76));z-index:1;pointer-events:none}
+.thumb{width:100%;height:220px;border-radius:20px;background:#eef2fb;display:flex;align-items:center;justify-content:center;color:#8090b0;margin-bottom:0;overflow:hidden;position:relative;box-shadow:none;font-size:16px}
+.card h3,.card p{position:absolute;left:18px;right:18px;z-index:2;color:#fff}
+.card h3{bottom:42px;font-size:20px;font-weight:800;margin:0;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.card p{bottom:18px;color:rgba(255,255,255,.9);line-height:1.5;font-size:14px;margin:0}
+@media(max-width:900px){.hero{min-height:560px;padding:72px 20px}.hero h1{font-size:42px}.hero p{font-size:18px}.hero .btn{padding:15px 24px}.cards{display:flex;overflow-x:auto;gap:18px;scroll-snap-type:x mandatory;padding:28px 20px 48px}.cards .card{flex:0 0 82vw;scroll-snap-align:start}.cards::-webkit-scrollbar{height:8px}.cards::-webkit-scrollbar-thumb{background:#ccd4e6;border-radius:999px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><strong>Seichi Meguri</strong><div>Anime Pilgrimage Planner</div></div>
+<nav class="desktop-nav">
+<a href="#home">Home</a>
+<a href="#details">Plans</a>
+<a class="nav-apply" href="#application">Request Form</a>
+</nav>
+<button class="hamburger" aria-label="Open menu" onclick="openMenu()"><span></span><span></span><span></span></button>
+</header>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<nav class="menu" id="menu">
+<button class="menu-close" onclick="closeMenu()">×</button>
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#details" onclick="closeMenu()">Plans</a>
+<a class="form-link" href="#application" onclick="closeMenu()">Request Form</a>
+</nav>
+<a class="floating-apply" href="#application">Request Now</a>
+<main>
+<section id="home" class="hero">
+<div>
+<h1>Custom Anime Trips in Japan</h1>
+<p>Visit real-life anime locations with a personalized route designed for your schedule, budget, and travel style.</p>
+<div class="hero-tags"><span>Tokyo / Nagano / Gifu / Sendai</span><span>Custom route planning</span><span>English support</span><span>Anime pilgrimage experiences</span></div>
+<a class="btn" href="#application">Start Your Journey</a>
+</div>
+<div class="placeholder" id="heroSlideshow">
+<div class="hero-slide active" style="background-image:url('S__116424734.jpg')"></div>
+<div class="hero-slide" style="background-image:url('S__116424732.jpg')"></div>
+<div class="hero-slide" style="background-image:url('S__116424730.jpg')"></div>
+<div class="hero-slide" style="background-image:url('46756_0.jpg')"></div>
+<div class="hero-slide" style="background-image:url('46757_0.jpg')"></div>
+<div class="slide-dots"><span class="slide-dot active"></span><span class="slide-dot"></span><span class="slide-dot"></span><span class="slide-dot"></span><span class="slide-dot"></span></div>
+</div>
+</section>
+<section class="cards">
+<div class="card"><div class="thumb"><img src="jezael-melgoza-alY6_OpdwRQ-unsplash.jpg" alt="Shibuya night cityscape for Jujutsu Kaisen route"></div><h3>Jujutsu Kaisen</h3><p>Tokyo / Shibuya</p></div>
+<div class="card"><div class="thumb"><div class="card-slideshow"><img class="card-slide active" src="hong-ki-tang-Al-oSi5hMW4-unsplash.jpg" alt="Lake Suwa view for Your Name route"><img class="card-slide" src="jl-lacar-zFLj1i2Rt-M-unsplash(1).jpg" alt="Tokyo stairs location for Your Name route"></div></div><h3>Your Name.</h3><p>Hida / Tokyo</p></div>
+<div class="card"><div class="thumb">Image</div><h3>Weathering With You</h3><p>Tokyo</p></div>
+<div class="card"><div class="thumb"><img src="bo-zhang-1eL5Tc-Cqdo-unsplash.jpg" alt="Kamakura seaside crossing for Slam Dunk route"></div><h3>Slam Dunk</h3><p>Kamakura</p></div>
+</section>
+<section id="details" class="section">
+<h2>Plans</h2>
+<p class="section-lead">Choose a custom anime trip or pilgrimage plan, from Tokyo day routes to multi-city journeys across Nagano, Gifu, and Sendai.</p>
+<div class="info-grid">
+<div class="info-card plan-card plan-entry" data-plan="entry" onclick="choosePlan('entry')">
+<h3>Entry</h3>
+<p class="price">$20–$35</p>
+<ul><li>1-day plan</li><li>Template-based itinerary</li><li>1 revision</li></ul>
+
+</div>
+<div class="info-card plan-card recommended plan-standard selected" data-plan="standard" onclick="choosePlan('standard')">
+<div class="badge">Recommended</div>
+<h3>Standard</h3>
+<p class="price">$40–$65</p>
+<ul><li>2–4 day itinerary</li><li>Includes anime pilgrimage spots</li><li>Individual adjustment included</li></ul>
+
+</div>
+<div class="info-card plan-card plan-premium" data-plan="premium" onclick="choosePlan('premium')">
+<h3>Premium</h3>
+<p class="price">$80–$135</p>
+<ul><li>Fully customized plan</li><li>Multiple cities</li><li>Priority support</li></ul>
+
+</div>
+</div>
+<div class="plan-cta"><span class="status" id="selectedPlanLabel">Selected: Standard Plan</span><button class="btn" type="button" id="selectedPlanBtn" onclick="applySelectedPlan()">Select Standard</button></div>
+<div class="plan-actions"><button class="btn" type="button" id="toggleExamplesBtn" onclick="toggleExamples()">View Example Trips</button></div>
+<div class="pricing-examples" id="sampleTrips">
+<h3>Popular Anime Trips & Pilgrimage Examples</h3><p style="text-align:center;font-size:13px;color:#667;margin:-10px 0 18px;">Swipe to see more examples →</p>
+<div class="pricing-carousel">
+<div class="pricing-card trip-entry"><h4>Entry Plan</h4><div class="trip-title">Your Name. Tokyo 1-Day Pilgrimage</div><div class="from-price">$25</div><p>Perfect for travelers with limited time. Visit iconic Tokyo pilgrimage locations in one efficient day route.</p><div class="pricing-grid"><div class="pricing-block"><h5>Highlights</h5><ul><li>Suga Shrine Stairs</li><li>Yotsuya Station</li><li>National Art Center</li><li>Night view spot</li></ul></div><div class="pricing-block"><h5>Included</h5><ul><li>1-day route</li><li>Train guidance</li><li>Maps links</li><li>Photo tips</li></ul></div></div><button class="btn" type="button" onclick="selectPlan('entry')">Request this sample</button></div><div class="pricing-card trip-standard"><h4>Standard Plan</h4><div class="trip-title">Your Name. Tokyo + Nagano 3-Day Journey</div><div class="from-price">$50</div><p>A deeper anime trip across Tokyo and Nagano, combining city scenes with a scenic countryside journey.</p><div class="pricing-grid"><div class="pricing-block"><h5>Highlights</h5><ul><li>Suga Shrine</li><li>Yotsuya</li><li>Lake Suwa</li><li>Tokyo shopping</li></ul></div><div class="pricing-block"><h5>Included</h5><ul><li>3-day custom plan</li><li>Shinkansen guidance</li><li>Hotel suggestions</li><li>Maps support</li></ul></div></div><button class="btn" type="button" onclick="selectPlan('standard')">Request this sample</button></div><div class="pricing-card trip-premium"><h4>Premium Plan</h4><div class="trip-title">Your Name. + Jujutsu Kaisen 6-Day Japan Pilgrimage</div><div class="from-price">$100</div><p>A premium multi-city anime pilgrimage journey across Japan with route planning and priority support.</p><div class="pricing-grid"><div class="pricing-block"><h5>Highlights</h5><ul><li>Tokyo</li><li>Gifu</li><li>Nagano</li><li>Sendai</li></ul></div><div class="pricing-block"><h5>Included</h5><ul><li>6-day itinerary</li><li>Transport planning</li><li>Hotel recommendations</li><li>Priority revisions</li></ul></div></div><button class="btn" type="button" onclick="selectPlan('premium')">Request this sample</button></div></div><div class="display-note">Detailed schedules, train guidance, hidden photo spots, and optimized travel routes will be provided after purchase.</div>
+</div>
+</section>
+<section id="application" class="section form-section">
+<h2>Request Your Custom Route</h2>
+<p class="section-lead">Tell us your budget, schedule, group size, and the anime locations you want to visit.</p>
+<div class="formwrap">
+<form action="https://script.google.com/macros/s/AKfycbyi4J-iKd8ky47dgTYsfCH11X_dU_WRvruoV7JeDpfeR6h2bLO8_M9SCmlMSCz5UOu8bA/exec" method="post">
+<div class="full"><label>Plan</label><select name="plan" required><option value="" disabled selected>Choose a plan</option><option value="consultation">Free Consultation</option><option value="entry">Entry</option><option value="standard">Standard</option><option value="premium">Premium</option></select><p style="font-size:13px;color:#667;margin-top:8px;line-height:1.5;">Need help deciding? Free consultation is available.</p></div>
+<div><label>Full Name <span class="required">Required</span></label><input type="text" name="fullname" placeholder="Your full name" required></div>
+<div><label>Email Address <span class="required">Required</span></label><input type="email" name="email" placeholder="your@email.com" required></div>
+<div><label>Country / Region <span class="required">Required</span></label><input type="text" name="country" placeholder="USA, France, Taiwan" required></div>
+<div><label>Budget (USD) <span class="required">Required</span></label><input type="number" name="budget" placeholder="100" required></div>
+<div><label>Number of Travelers <span class="required">Required</span></label><input type="number" name="people" min="1" placeholder="2" required></div>
+<div><label>Length of Stay (Days) <span class="required">Required</span></label><input type="number" name="days" min="1" placeholder="5" required></div>
+<div class="full custom-date-wrap">
+<label>Planned Start Date <span class="required">Required</span></label>
+<input type="hidden" name="date" id="plannedDate" required>
+<div class="custom-date-box">
+<button type="button" class="date-part" id="yearPart">YYYY</button><span>/</span>
+<button type="button" class="date-part" id="monthPart">MM</button><span>/</span>
+<button type="button" class="date-part" id="dayPart">DD</button>
+<button type="button" class="calendar-button" id="calendarButton" aria-label="Open calendar">📅</button>
+<input type="date" id="calendarInput" class="calendar-hidden" aria-label="Calendar date picker">
+</div>
+<div class="date-dropdown" id="dateDropdown"><select id="dateSelect" size="6"></select></div>
+<p class="date-note">Please choose a date at least 3 weeks from today.</p>
+</div>
+<div class="full"><label>Places You Want to Visit</label><input type="text" name="places" placeholder="Tokyo, Kyoto, Osaka"></div>
+<div class="full"><label>Anime You Want to Visit</label><input type="text" name="anime" placeholder="e.g. Your Name, Slam Dunk"></div>
+<textarea name="notes" placeholder="Optional requests: transport preference, cities, hotel level, etc."></textarea>
+<div class="full"><p style="font-size:13px;color:#667;margin-bottom:12px;line-height:1.6;">We provide personalized travel planning and recommendations only.<br>Final bookings for hotels, trains, flights, and tickets are made directly by the traveler.</p><button class="btn submit" type="submit" id="submitBtn">Submit Request</button><p style="font-size:13px;color:#667;margin-top:10px;line-height:1.6;">We usually reply within 24 hours after receiving your request.</p><div id="formMessage" class="form-message" style="display:none;margin-top:16px;background:#fff;border-left:5px solid #35b46a;border-radius:16px;padding:18px 20px;color:#334;line-height:1.7;font-size:15px;box-shadow:0 8px 24px rgba(0,0,0,.06)"></div></div>
+</form>
+</div>
+</section>
+</main>
+<div class="footer">© Seichi Meguri</div>
+<script>
+function openMenu(){document.getElementById('menu').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeMenu(){document.getElementById('menu').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+let currentPlan='standard';function choosePlan(plan){currentPlan=plan;document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));const card=document.querySelector('.plan-card[data-plan="'+plan+'"]');if(card){card.classList.add('selected');}const name=plan.charAt(0).toUpperCase()+plan.slice(1);document.getElementById('selectedPlanLabel').textContent='Selected: '+name+' Plan';document.getElementById('selectedPlanBtn').textContent='Select '+name;}function applySelectedPlan(){const sel=document.querySelector('select[name="plan"]');if(sel){sel.value=currentPlan;}const el=document.getElementById('application');if(el){el.scrollIntoView({behavior:'smooth'});}} function selectPlan(plan){const sel=document.querySelector('select[name="plan"]');if(sel){sel.value=plan;}const el=document.getElementById('application');if(el){el.scrollIntoView({behavior:'smooth'});}}
+function toggleExamples(){const box=document.getElementById('sampleTrips');const btn=document.getElementById('toggleExamplesBtn');if(box.classList.contains('open')){box.classList.remove('open');btn.textContent='View Example Trips';}else{box.classList.add('open');btn.textContent='Close Example Trips';box.scrollIntoView({behavior:'smooth',block:'nearest'});}}
+
+document.addEventListener('DOMContentLoaded',function(){
+  const slides=document.querySelectorAll('.hero-slide');
+  const dots=document.querySelectorAll('.slide-dot');
+  let slideIndex=0;
+  if(slides.length){setInterval(function(){slides[slideIndex].classList.remove('active');if(dots[slideIndex])dots[slideIndex].classList.remove('active');slideIndex=(slideIndex+1)%slides.length;slides[slideIndex].classList.add('active');if(dots[slideIndex])dots[slideIndex].classList.add('active');},4500);}
+
+  const plannedDate=document.getElementById('plannedDate');
+  const calendarInput=document.getElementById('calendarInput');
+  const yearPart=document.getElementById('yearPart');
+  const monthPart=document.getElementById('monthPart');
+  const dayPart=document.getElementById('dayPart');
+  const calendarButton=document.getElementById('calendarButton');
+  const dateDropdown=document.getElementById('dateDropdown');
+  const dateSelect=document.getElementById('dateSelect');
+  let selectedYear='';
+  let selectedMonth='';
+  let selectedDay='';
+  let activePart='';
+  const minDate=new Date();
+  minDate.setDate(minDate.getDate()+21);
+  const minDateValue=minDate.toISOString().split('T')[0];
+  if(calendarInput){calendarInput.min=minDateValue;}
+  function pad(n){return String(n).padStart(2,'0')}
+  function daysInMonth(year,month){return new Date(Number(year),Number(month),0).getDate()}
+  function updateDateDisplay(){yearPart.textContent=selectedYear||'YYYY';monthPart.textContent=selectedMonth||'MM';dayPart.textContent=selectedDay||'DD'}
+  function setDateValue(){
+    if(selectedYear&&selectedMonth&&selectedDay){
+      const value=selectedYear+'-'+selectedMonth+'-'+selectedDay;
+      if(value>=minDateValue){plannedDate.value=value;calendarInput.value=value}
+      else{plannedDate.value='';calendarInput.value='';alert('Please select a date at least 3 weeks from today.')}
+    }
+  }
+  function openDateDropdown(part){
+    activePart=part;
+    dateSelect.innerHTML='';
+    const now=new Date();
+    if(part==='year'){
+      for(let y=now.getFullYear();y<=now.getFullYear()+2;y++){dateSelect.add(new Option(String(y),String(y)))}
+    }else if(part==='month'){
+      for(let m=1;m<=12;m++){dateSelect.add(new Option(pad(m),pad(m)))}
+    }else if(part==='day'){
+      const y=selectedYear||String(now.getFullYear());
+      const m=selectedMonth||pad(now.getMonth()+1);
+      for(let d=1;d<=daysInMonth(y,m);d++){dateSelect.add(new Option(pad(d),pad(d)))}
+    }
+    dateDropdown.classList.add('open');
+  }
+  yearPart.addEventListener('click',function(){openDateDropdown('year')});
+  monthPart.addEventListener('click',function(){openDateDropdown('month')});
+  dayPart.addEventListener('click',function(){openDateDropdown('day')});
+  dateSelect.addEventListener('change',function(){
+    if(activePart==='year'){selectedYear=dateSelect.value;if(selectedMonth&&selectedDay&&Number(selectedDay)>daysInMonth(selectedYear,selectedMonth)){selectedDay=''}}
+    if(activePart==='month'){selectedMonth=dateSelect.value;if(selectedYear&&selectedDay&&Number(selectedDay)>daysInMonth(selectedYear,selectedMonth)){selectedDay=''}}
+    if(activePart==='day'){selectedDay=dateSelect.value}
+    updateDateDisplay();
+    setDateValue();
+    dateDropdown.classList.remove('open');
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.custom-date-wrap')){dateDropdown.classList.remove('open')}});
+  calendarButton.addEventListener('click',function(){
+    if(calendarInput.showPicker){calendarInput.showPicker()}else{calendarInput.focus();calendarInput.click()}
+  });
+  calendarInput.addEventListener('change',function(){
+    if(!calendarInput.value)return;
+    const parts=calendarInput.value.split('-');
+    selectedYear=parts[0];
+    selectedMonth=parts[1];
+    selectedDay=parts[2];
+    plannedDate.value=calendarInput.value;
+    updateDateDisplay();
+  });
+});
+const cardSlides=document.querySelectorAll('.card-slideshow');cardSlides.forEach(function(show){const imgs=show.querySelectorAll('.card-slide');let i=0;if(imgs.length>1){setInterval(function(){imgs[i].classList.remove('active');i=(i+1)%imgs.length;imgs[i].classList.add('active');},3500);}});
+const requestForm=document.querySelector('#application form');if(requestForm){requestForm.addEventListener('submit',async function(e){e.preventDefault();const btn=document.getElementById('submitBtn');const box=document.getElementById('formMessage');btn.textContent='Sending...';btn.disabled=true;box.style.display='none';try{const fd=new FormData(requestForm);await fetch(requestForm.action,{method:'POST',body:fd,mode:'no-cors'});btn.textContent='Submitted ✓';box.innerHTML='Thank you! Your request has been received.<br><br>We usually reply within 24 hours.<br>Please check your email inbox and spam folder if needed.';box.style.display='block';box.style.borderLeftColor='#35b46a';setTimeout(function(){btn.textContent='Submit Request';btn.disabled=false;},3000);}catch(err){btn.textContent='Submit Request';btn.disabled=false;box.innerHTML='Sorry, something went wrong.<br>Please try again in a moment.';box.style.display='block';box.style.borderLeftColor='#ff4f86';}});} </script>
+</body>
+</html>
